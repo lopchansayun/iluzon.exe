@@ -1,0 +1,39 @@
+.project-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 340px;
+  height: 220px;
+  margin-left: -170px;
+  margin-top: -110px;
+  z-index: var(--z-preview);
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0.8);
+  will-change: transform;
+  background: var(--color-bg-raised);
+  border: 1px solid var(--color-border);
+}
+
+.project-preview__swatch {
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.4s ease;
+}
+
+@media (max-width: 900px) {
+  .project-preview {
+    display: none;
+  }
+}
+
+.project-preview__swatch > img,
+.project-preview__swatch > video,
+.project-preview__swatch > iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+  object-fit: cover;
+}

@@ -1,0 +1,49 @@
+:root {
+  /* ---- color ---- */
+  --color-bg: #0c0c0b;
+  --color-bg-raised: #131311;
+  --color-fg: #eeece6;
+  --color-fg-dim: #86847d;
+  --color-fg-faint: #55534d;
+  --color-border: rgba(238, 236, 230, 0.09);
+  --color-border-strong: rgba(238, 236, 230, 0.18);
+  --color-accent: #b7935a;
+  --color-accent-dim: rgba(183, 147, 90, 0.35);
+
+  /* ---- type ---- */
+  --font-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  --size-hero: clamp(3.2rem, 9.5vw, 11rem);
+  --size-h1: clamp(2.4rem, 6vw, 5.5rem);
+  --size-project-title: clamp(2rem, 5vw, 5.5rem);
+  --size-h2: clamp(1.6rem, 3.4vw, 2.6rem);
+  --size-body: 1rem;
+  --size-body-lg: 1.15rem;
+  --size-meta: 0.72rem;
+  --size-small: 0.85rem;
+
+  /* ---- layout ---- */
+  --edge: clamp(1.25rem, 4vw, 3.5rem);
+  --header-height: 5.5rem;
+  --max-width: 1600px;
+  --radius: 2px;
+
+  /* ---- motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 0.35s;
+  --dur-medium: 0.7s;
+  --dur-slow: 1.2s;
+
+  --z-cursor: 200;
+  --z-preview: 150;
+  --z-transition: 300;
+  --z-header: 100;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --header-height: 4.25rem;
+  }
+}

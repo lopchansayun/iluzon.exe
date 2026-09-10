@@ -1,0 +1,70 @@
+h1, h2, h3, h4, p, figure {
+  margin: 0;
+}
+
+.text-hero {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--size-hero);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.text-h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--size-h1);
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+}
+
+.text-h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--size-h2);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.text-project-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--size-project-title);
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+}
+
+.text-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--size-body-lg);
+  line-height: 1.6;
+  color: var(--color-fg-dim);
+  max-width: 38ch;
+}
+
+.text-meta {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--size-meta);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-fg-dim);
+}
+
+.text-small {
+  font-family: var(--font-body);
+  font-size: var(--size-small);
+  color: var(--color-fg-dim);
+  line-height: 1.5;
+}
+
+.font-nav {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}

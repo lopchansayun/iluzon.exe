@@ -1,0 +1,10 @@
+.media-renderer,
+.project-page__hero-visual > img,
+.project-page__hero-visual > video,
+.project-page__hero-visual > iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+  object-fit: cover;
+}

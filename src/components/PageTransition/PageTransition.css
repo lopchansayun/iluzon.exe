@@ -1,0 +1,8 @@
+.page-transition-cover {
+  position: fixed;
+  z-index: var(--z-transition);
+  background: var(--color-bg-raised);
+  display: none;
+  overflow: hidden;
+  pointer-events: none;
+}
