@@ -10,6 +10,11 @@
 html {
   background: var(--color-bg);
   color-scheme: dark;
+  transition: background-color var(--dur-theme) var(--ease-out);
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
 }
 
 body {
@@ -20,6 +25,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color var(--dur-theme) var(--ease-out),
+    color var(--dur-theme) var(--ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body {
+    transition: none;
+  }
 }
 
 #root {

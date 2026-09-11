@@ -1,15 +1,17 @@
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+/* .header itself needs no styling — the glass pill inside it is
+   position: fixed, so the <header> stays a plain landmark element
+   that collapses to zero height without affecting page flow. */
+
+.header__glass {
   z-index: var(--z-header);
-  height: var(--header-height);
+}
+
+.header__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--edge);
-  mix-blend-mode: difference;
+  gap: clamp(1rem, 3vw, 3rem);
+  width: min(90vw, 900px);
 }
 
 .header__name {
@@ -19,6 +21,7 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--color-fg);
+  white-space: nowrap;
 }
 
 .header__nav {
@@ -29,7 +32,7 @@
 .header__link {
   position: relative;
   color: var(--color-fg);
-  opacity: 0.55;
+  opacity: 0.6;
   transition: opacity var(--dur-fast) var(--ease-out);
 }
 
@@ -56,18 +59,37 @@
   transform: scaleX(1);
 }
 
+.header__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Same fixed height as .theme-toggle (2.1rem) so the two right-side
+   controls sit flush against each other instead of at two different
+   heights within the flex row. */
 .header__index {
+  display: inline-flex;
+  align-items: center;
+  height: 2.1rem;
+  padding: 0 0.9rem;
   color: var(--color-fg);
-  opacity: 0.55;
-  transition: opacity var(--dur-fast) var(--ease-out);
+  opacity: 0.6;
+  border-radius: 999px;
+  transition: opacity var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
 }
 
 .header__index:hover,
 .header__index:focus-visible {
   opacity: 1;
+  background-color: var(--color-border);
 }
 
 @media (max-width: 720px) {
+  .header__inner {
+    width: min(94vw, 420px);
+  }
+
   .header__nav {
     display: none;
   }

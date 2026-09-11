@@ -1,0 +1,42 @@
+.theme-toggle {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  color: var(--color-fg);
+  opacity: 0.7;
+  border-radius: 50%;
+  transition: opacity var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  opacity: 1;
+  background-color: var(--color-border);
+}
+
+.theme-toggle__icon {
+  grid-area: 1 / 1;
+  transition: opacity var(--dur-theme) var(--ease-out), transform var(--dur-theme) var(--ease-out);
+}
+
+.theme-toggle__icon--sun {
+  opacity: 0;
+  transform: rotate(-60deg) scale(0.4);
+}
+
+.theme-toggle__icon--moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+:root[data-theme="light"] .theme-toggle__icon--sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+:root[data-theme="light"] .theme-toggle__icon--moon {
+  opacity: 0;
+  transform: rotate(60deg) scale(0.4);
+}

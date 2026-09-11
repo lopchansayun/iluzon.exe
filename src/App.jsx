@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Header from "./components/Header/Header";
 import CustomCursor from "./components/CustomCursor/CustomCursor";
 import { CursorProvider } from "./components/CustomCursor/CursorContext";
+import { ThemeProvider } from "./context/ThemeContext";
 import SmoothScroll from "./components/SmoothScroll/SmoothScroll";
 import PageTransitionCover from "./components/PageTransition/PageTransition";
 import Home from "./pages/Home/Home";
@@ -72,24 +73,26 @@ export default function App() {
   }, []);
 
   return (
-    <CursorProvider>
-      <SmoothScroll>
-        <Header onLogoClick={view === "project" ? handleClose : undefined} />
-        <CustomCursor />
+    <ThemeProvider>
+      <CursorProvider>
+        <SmoothScroll>
+          <Header onLogoClick={view === "project" ? handleClose : undefined} />
+          <CustomCursor />
 
-        <Home ref={homeRef} onOpenProject={handleOpenProject} galleryEnabled={view !== "project"} />
+          <Home ref={homeRef} onOpenProject={handleOpenProject} galleryEnabled={view !== "project"} />
 
-        <div style={{ display: view === "home" ? "none" : "block" }}>
-          <Project
-            ref={projectRef}
-            project={activeProject}
-            onClose={handleClose}
-            onNavigate={handleNavigate}
-          />
-        </div>
+          <div style={{ display: view === "home" ? "none" : "block" }}>
+            <Project
+              ref={projectRef}
+              project={activeProject}
+              onClose={handleClose}
+              onNavigate={handleNavigate}
+            />
+          </div>
 
-        <PageTransitionCover ref={coverRef} />
-      </SmoothScroll>
-    </CursorProvider>
+          <PageTransitionCover ref={coverRef} />
+        </SmoothScroll>
+      </CursorProvider>
+    </ThemeProvider>
   );
 }

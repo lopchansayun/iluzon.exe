@@ -1,4 +1,10 @@
 export const sections = {
+  showcase: {
+    enabled: true,
+    id: "showcase",
+    title: "Selected work",
+    countLabel: "showcase",
+  },
   featuredWork: {
     enabled: true,
     id: "work",
